@@ -1,0 +1,37 @@
+#Comprobar que tenemos instalado Anaconda. Al acceder a los software de linea de comandos
+$ cd /home/lgbb/software/
+
+#Listamos los archivos, se observa que ya estaba instalado Anaconda3-2024.02-1-Linux-x86_64.sh, de lo contrario, lo instalamos con wget
+$ ls
+Google 
+Anaconda Repo
+Anaconda installers
+https://repo.anaconda.com/archive/Anaconda3-2024.06-1-Linux-x86_64.sh
+
+$ wget https://repo.anaconda.com/archive/Anaconda3-2024.06-1-Linux-x86_64.sh
+
+#Creamos y activamos gbs_ipyrad
+
+$ conda create -n gbs_ipyrad
+
+environment location: /home/lgbb/anaconda3/envs/gbs_ipyrad
+
+$ conda activate gbs_ipyrad
+
+#Instalacion (20min aprox)
+
+$ conda install ipyrad -c conda-forge -c bioconda
+
+#Al terminar la instalacion se puede cerrar y en un nuevo terminal nos ubicamos nuestra carpeta on archivos fastq.gz, en nuestro caso en *trim.fastq y Activamos el enviromend creado
+
+$ conda activate gbs_ipyrad
+
+# Necesitamos un archivo de parametros, tenemos 29 parametros que se pueden modificar, lo creamos con el siguiente comando, dandole un nuevo nombre.
+
+$ ipyrad -n pomacea
+$ ls
+#Se crea el archivo de parametros:
+params-pomacea.txt
+
+#modificar los parametros segun las necesidades
+$ nano params-pomacea.txt
